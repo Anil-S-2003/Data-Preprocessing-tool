@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="center">
+    <div class="container">
+        <h2>Upload CSV or Excel File</h2>
+        <form method="POST" enctype="multipart/form-data" class="upload-form">
+            <label for="file-upload" class="upload-button">+</label>
+            <input type="file" id="file-upload" name="file" accept=".csv, .xlsx" required hidden onchange="displayFileName(this)">
+            <span id="file-name" class="file-name">No file chosen</span>
+            <button type="submit">upload file</button>
+        </form>
+        
+        
+
+        {% if results %}
+            <h3>Empty Cells Found</h3>
+            <table>
+                <tr>
+                    <th>Row</th>
+                    <th>Column</th>
+                    <th>Cell Index</th>
+                </tr>
+                {% for r in results %}
+                    <tr>
+                        <td>{{ r.row }}</td>
+                        <td>{{ r.column }}</td>
+                        <td>{{ r.index }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% elif message %}
+            <p>{{ message }}</p>
+        {% endif %}
+
+        <br>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</body>
+</html>
+<script>
+    function displayFileName(input) {
+      const fileNameSpan = document.getElementById('file-name');
+      fileNameSpan.textContent = input.files[0]?.name || 'No file chosen';
+    }
+  </script>
+  

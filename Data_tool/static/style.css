@@ -1,0 +1,75 @@
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2f8f83;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #24766f;
+}
+.flash {
+    color: red;
+    margin-top: 10px;
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.upload-button {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    background-color: #24766f;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+table, th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+.file-name {
+    font-size: 14px;
+    margin-top: 5px;
+    color: #333;
+}
